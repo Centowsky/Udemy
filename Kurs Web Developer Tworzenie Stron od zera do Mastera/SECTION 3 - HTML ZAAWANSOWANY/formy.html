@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="new_article.php" method="post">
+      <p>
+        <label for="title">Tytul artykulu: </label>
+        <input type="text" id="title" name="title" />
+      </p>
+      <p>
+        <label for="content">Tresc artykulu: </label>
+        <textarea cols="50" rows="4" id="content" name="content"></textarea>
+      </p>
+      <p>
+        <label for="pub-date">Data publikacji </label>
+        <input type="datetime-local" id="pub-date" name="pub-date" />
+      </p>
+      <p>
+        <label for="type">Typ publikacji: </label>
+        <input type="radio" id="type" name="type" value="news" /> News
+        <input type="radio" id="type" name="type" value="article" /> Artykul
+        <input type="radio" id="type" name="type" value="recenzja" /> Recenzja
+      </p>
+      <p>
+        <label for="tags">Tagi: </label>
+        <input type="checkbox" id="tags" name="tags" value="podroze" /> podroze
+        <input type="checkbox" id="tags" name="tags" value="kategoria" />
+        kategoria
+      </p>
+      <button type="submit">Wyslij</button>
+      <button type="reset">Reset</button>
+    </form>
+  </body>
+</html>

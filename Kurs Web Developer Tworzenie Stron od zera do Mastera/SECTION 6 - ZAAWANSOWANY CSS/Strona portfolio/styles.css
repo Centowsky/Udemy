@@ -1,0 +1,71 @@
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  background-color: #ffffff;
+}
+
+.navbar {
+  width: 100%;
+  margin: 0;
+  padding: 0.5rem;
+  height: 3rem;
+  top: 0;
+  left: 0;
+  position: sticky;
+  background-color: #1f1f1f;
+  color: #ffffff;
+}
+
+.navbar a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: all 1s;
+}
+
+.navbar a:hover {
+  transform: scale(1.5);
+  color: #ffd100;
+  transition: all 0.5s;
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0.5rem 0 0.5rem auto;
+  list-style-type: none;
+  width: 55%;
+}
+
+#home {
+  background-image: url("https://cdn.pixabay.com/photo/2016/11/23/14/45/coding-1853305__340.jpg");
+  background-size: cover;
+  height: 40rem;
+}
+
+#welcome {
+  margin: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.message {
+  display: flex;
+  width: 40rem;
+  justify-content: center;
+  margin: 1rem;
+  align-items: center;
+  font-size: 2rem;
+}
+
+#welcome img {
+  max-width: 100%;
+}
