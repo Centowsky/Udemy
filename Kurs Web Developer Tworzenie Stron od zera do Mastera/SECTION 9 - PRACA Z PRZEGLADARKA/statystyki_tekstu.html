@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Statystyki tekstu</title>
+    <style>
+      textarea {
+        width: 80%;
+        height: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea></textarea>
+    <div>
+      <div>Ilosc znakow: <span id="num-chars"></span></div>
+      <div>Ilosc słow: <span id="num-words"></span></div>
+      <div>Ilosc zdan: <span id="num-sent"></span></div>
+    </div>
+    <script>
+      let textArea = document.getElementsByTagName("textarea")[0];
+      textArea.addEventListener("input", onChange);
+
+      function onChange() {
+        const dane = textArea.value;
+        //console.log(dane);
+
+        const numChars = dane.length;
+        const numWords = dane.split(" ").length - 1;
+        const numSent = dane.split(".").length - 1;
+        document.getElementById("num-chars").innerHTML = numChars;
+        document.getElementById("num-words").innerHTML = numWords;
+        document.getElementById("num-sent").innerHTML = numSent;
+      }
+    </script>
+  </body>
+</html>

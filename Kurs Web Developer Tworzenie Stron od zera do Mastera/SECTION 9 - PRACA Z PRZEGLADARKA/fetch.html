@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      fetch("https://swapi.dev/api/people/3/")
+        .then(function (response) {
+          return response.json();
+        })
+        .then(processData);
+
+      function processData(data) {
+        console.log(data);
+        console.log(`Imie: ${data.name}`);
+        console.log(`Wysokosc: ${data.height}`);
+        console.log(`Masa: ${data.mass}`);
+        console.log(`Kolor oczu: ${data.eye_color}`);
+      }
+    </script>
+  </body>
+</html>

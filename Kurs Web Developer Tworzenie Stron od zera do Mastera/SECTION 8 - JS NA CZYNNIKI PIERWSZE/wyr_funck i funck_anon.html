@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let add10 = function (num) {
+        return num + 10;
+      };
+
+      console.log(add10(15));
+
+      add10 = function (num) {
+        let sum = num + 10;
+        console.log(sum);
+        return sum;
+      };
+      const sum = add10(20);
+      console.log(sum);
+
+      function downloadFile(fileName, onComplete, onError) {
+        if (fileName.length > 5) {
+          onComplete("success");
+        } else {
+          onError("Error!");
+        }
+      }
+
+      downloadFile(
+        "fileName123.txt",
+        function (str) {
+          console.log("Complete: ", str);
+        },
+        function (str) {
+          console.log("Error: ", str);
+        }
+      );
+
+      let getRectArea = function (a, b) {
+        return a * b;
+      };
+
+      console.log(getRectArea(2, 3));
+      console.log(getRectArea(10, 4));
+
+      function changeArr(arr, callback) {
+        for (let i = 0; i < arr.length; i++) {
+          const v = arr[i];
+          const result = callback(v);
+          console.log(result);
+        }
+      }
+
+      changeArr([1, 2, 3, 4, 5, 6], function (num) {
+        return num * 2;
+      });
+      console.log("//////////////////////////");
+
+      function filterArr(arr, callback) {
+        for (let i = 0; i < arr.length; i++) {
+          const el = arr[i];
+          const flag = callback(el);
+          if (flag) console.log(el);
+        }
+      }
+
+      const nameCheck = function (nameArr) {
+        if (nameArr.length > 3) {
+          return true;
+        } else {
+          return false;
+        }
+
+        filterArr(["Ania", "Kasia", "Ola", "Daniel"], nameCheck);
+
+        filterArr([10, 20, 30, 40, 50], function (num) {
+          if (num < 35) return true;
+          else return false;
+        });
+      };
+    </script>
+  </body>
+</html>

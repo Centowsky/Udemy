@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let company = {
+        name: "Testowa firma",
+        address: {
+          city: "Szczecin",
+          street: "Chopina",
+          number: 55,
+        },
+        employees: [],
+        addEmployee: function (email, job, salary) {
+          if (
+            typeof email !== "string" ||
+            email.indexOf("@") === -1 ||
+            typeof job !== "string" ||
+            typeof salary !== "number" ||
+            salary < 4000
+          ) {
+            console.log("Nieprawidlowe dane!");
+            return false;
+          }
+
+          const employee = {
+            email: email,
+            job: job,
+            salary: salary,
+            getInfo: function () {
+              return this.email + " - " + this.job + ", pensja: " + this.salary;
+            },
+          };
+
+          this.employees.push(employee);
+
+          return true;
+        },
+
+        showEmployees: function () {
+          console.log("Pracownicy -  " + this.name);
+
+          for (let i = 0; i < this.employees.length; i++) {
+            const e = this.employees[i];
+            console.log(e.getInfo());
+          }
+        },
+
+        changeSalary: function (perChange) {
+          for (let i = 0; i < this.employees.length; i++) {
+            const e = this.employees[i];
+            e.salary = e.salary * 1.15;
+          }
+        },
+      };
+
+      company.addEmployee("Ania@test.com", "admin", 10000);
+      company.addEmployee("Adam@test.com", "tester", 8000);
+      company.addEmployee("Daniel@test.com", "programer", 12000);
+      company.addEmployee("Ola@test.com", "tl", 15000);
+      company.showEmployees();
+      company.changeSalary(15);
+      company.showEmployees();
+    </script>
+  </body>
+</html>

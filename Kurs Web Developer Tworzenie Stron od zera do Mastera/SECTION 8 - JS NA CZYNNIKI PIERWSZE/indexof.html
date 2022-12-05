@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function validateEmail(email) {
+        let monkeyIndex = email.indexOf("@");
+        let dotIndex = email.indexOf(".", monkeyIndex);
+
+        console.log(`Wartosc @: ${monkeyIndex} `);
+        console.log(`Wartosc .: ${dotIndex} `);
+
+        if (monkeyIndex >= 0 && dotIndex >= 0) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+
+      const email1 = "asia@example.com";
+      const email2 = "karol@domena";
+      const email3 = "user.com";
+      const email4 = "user@gmail.com";
+
+      console.log(email1, validateEmail(email1));
+      console.log(email2, validateEmail(email2));
+      console.log(email3, validateEmail(email3));
+      console.log(email4, validateEmail(email4));
+    </script>
+  </body>
+</html>

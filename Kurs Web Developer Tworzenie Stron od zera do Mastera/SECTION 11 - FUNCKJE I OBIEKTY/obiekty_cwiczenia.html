@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*function createPlan(planeModel, planeYear, planeBrand) {
+        return {
+          model: planeModel,
+          year: planeYear,
+          brand: planeBrand,
+          print: function () {
+            console.log(this.model, this.year, this.brand);
+          },
+        };
+      }
+
+      let a = createPlan("A3", 2007, "Audi");
+      a.print();
+      let b = createPlan("E60", 2008, "BMW");
+      b.print();*/
+
+      function Car(carBrand, carModel, carYear) {
+        this.brand = carBrand;
+        this.model = carModel;
+        this.year = carYear;
+        this.print = function () {
+          console.log(this.brand, this.model, this.year);
+        };
+      }
+
+      const car1 = new Car("Audi", "A3", 2001);
+      car1.print();
+    </script>
+  </body>
+</html>

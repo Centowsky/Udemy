@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let computer = {
+        totalPrice: 0,
+        type: "PC",
+        parts: [
+          { type: "PROC", name: "AMD", price: 3500 },
+          { type: "GPU", name: "NVIDIA", price: 1500 },
+          { type: "RAM", name: "HYPERX", price: 499 },
+        ],
+
+        calculatePrice: function () {
+          let totalPrice = 0;
+          for (let i = 0; i < this.parts.length; i++) {
+            const part = this.parts[i];
+            totalPrice += part.price;
+          }
+
+          this.totalPrice = totalPrice;
+        },
+      };
+
+      computer.calculatePrice();
+      console.log("Cena komputera: ", computer.totalPrice);
+    </script>
+  </body>
+</html>
