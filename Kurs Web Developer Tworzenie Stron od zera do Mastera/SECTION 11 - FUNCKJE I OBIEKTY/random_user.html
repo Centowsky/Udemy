@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: aliceblue;
+        padding: 2rem;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      h2 {
+        color: cadetblue;
+        text-align: center;
+      }
+
+      .row {
+        display: flex;
+      }
+
+      .column {
+        flex: 50%;
+      }
+
+      #avatar-img {
+        margin: 0.3rem;
+      }
+
+      .user-profile {
+        margin: auto;
+        padding: 0.5rem;
+        width: 30rem;
+        background-color: thistle;
+        border-radius: 0.4rem;
+      }
+
+      .avatar-img {
+        border-radius: 5rem;
+      }
+
+      .fullname {
+        font-weight: 700;
+        font-size: 0.95rem;
+      }
+
+      .username {
+        font-size: 0.85rem;
+      }
+
+      .user-details {
+        margin-top: 1rem;
+        color: rgb(255, 0, 0);
+        font-size: 0.8rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Losowy uzytkownik</h2>
+    <div class="user-profile">
+      <div class="row">
+        <div class="column"><img class="avatar-img" src="" alt="Avatar" /></div>
+        <div class="column">
+          <div class="fullname">Fullname</div>
+          <div class="username">Username</div>
+          <div class="user-details">
+            <div class="email">Mail</div>
+            <div class="country">Country</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      window.onload = function () {
+        fetch("https://randomuser.me/api")
+          .then((response) => response.json())
+          .then((data) => randomData(data));
+      };
+
+      function randomData(data) {
+        console.log(data);
+        var result = data.results[0];
+        var fullname = `${result.name.title} ${result.name.first} ${result.name.last}`;
+        document.getElementsByClassName("fullname")[0].innerHTML = fullname;
+        var img = result.picture.large;
+        document.getElementsByClassName("avatar-img")[0].src = img;
+        var username = result.login.username;
+        document.getElementsByClassName("username")[0].innerHTML = username;
+        var email = result.email;
+        document.getElementsByClassName("email")[0].innerHTML = email;
+        var country = result.location.country;
+        document.getElementsByClassName("country")[0].innerHTML = country;
+      }
+    </script>
+  </body>
+</html>

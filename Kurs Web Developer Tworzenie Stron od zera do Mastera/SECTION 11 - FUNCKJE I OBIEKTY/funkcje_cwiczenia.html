@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*function test(...params) {
+                for (let i = 0; i < params.length; i++) {
+                  console.log(i + ": " + params[i]);
+                }
+              }
+
+              test(5, 9, 98, 998, 123, "echo");*/
+
+      /*function test(params) {
+              if (params.hasOwnProperty("data")) console.log(params.data);
+              var localStr = params.hasOwnProperty("str")
+                ? params.str
+                : "domyslna wartosc";
+              var localNum = params.num || 200;
+
+              console.log(localStr, localNum);
+            }
+
+            test({ data: 10, str: "Hello!", num2: 998 });*/
+
+      /*function foo(arg1 = 998, arg2 = "Hello!") {
+              console.log(arg1, arg2);
+            }
+
+            foo();
+            foo(997);*/
+
+      function parseData(jsonStr, onComplete, onError) {
+        try {
+          let result = JSON.parse(jsonStr);
+          onComplete(result);
+        } catch (error) {
+          onError();
+          return;
+        }
+      }
+      function done(result) {
+        console.log("ok!" + result);
+      }
+      function failed(result) {
+        console.log("ups!" + result);
+      }
+      parseData('{"data": 99}', done, failed);
+      parseData('{"dataxzczxczxc9"}', done, failed);
+    </script>
+  </body>
+</html>
