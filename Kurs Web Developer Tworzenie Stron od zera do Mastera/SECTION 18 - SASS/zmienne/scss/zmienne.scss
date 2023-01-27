@@ -1,0 +1,13 @@
+$color: green; //zmienna globalna
+$font: Arial, Tahoma, sans-serif;
+
+body {
+  $newColor: blue;
+  background-color: $color;
+  border: 1ps solid $newColor;
+  font-family: $font, Helvetica;
+}
+
+div {
+  border: 1px solid $color;
+}
