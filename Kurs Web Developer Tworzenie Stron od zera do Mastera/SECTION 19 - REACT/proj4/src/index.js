@@ -3,28 +3,11 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import Footer from "./components/footer/Footer";
-import Heading from "./components/heading/Heading";
-import HeadingStyledComponent from "./components/headingStyledComponents/HeadingStyledComponent";
-
-const user = {
-  name: "Centowsky",
-  rank: "Admin",
-};
-
-const companyData = {
-  email: "company@example.com",
-  city: "Szczecin",
-  street: "Chopina 55",
-};
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Heading user={user}></Heading>
-    <HeadingStyledComponent></HeadingStyledComponent>
     <App />
-    <Footer companyData={companyData} contactEmail="admin@example.com"></Footer>
   </React.StrictMode>
 );
 
