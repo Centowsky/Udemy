@@ -1,7 +1,16 @@
 import React from "react";
 
-const Task = () => {
-  return <div>Task</div>;
+const Task = (props) => {
+  const { text, date, id } = props.task;
+  return (
+    <div>
+      <p>
+        <b>{text}</b> - czas do: <span>{date} </span>
+        <button onClick={() => props.change(id)}>Zrobione!</button>
+        <button onClick={() => props.delete(id)}>X</button>
+      </p>
+    </div>
+  );
 };
 
 export default Task;
