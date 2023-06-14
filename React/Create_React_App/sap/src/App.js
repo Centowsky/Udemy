@@ -1,10 +1,11 @@
 import "./App.css";
 import React, { Component } from "react";
-import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
+import { BrowserRouter, NavLink, Routes, Route } from "react-router-dom";
 
 const Home = () => <h1>Strona starowa</h1>;
 const News = () => <h1>Aktualności</h1>;
 const Contact = () => <h1>Kontakt</h1>;
+const ErrorPage = () => <h1>Nie odnaleziono strony!</h1>;
 
 export default class App extends Component {
   render() {
@@ -15,13 +16,13 @@ export default class App extends Component {
             <nav>
               <ul>
                 <li>
-                  <Link to="/">Start</Link>
+                  <NavLink to="/">Start</NavLink>
                 </li>
                 <li>
-                  <Link to="/news">Aktualnosci</Link>
+                  <NavLink to="/news">Aktualnosci</NavLink>
                 </li>
                 <li>
-                  <Link to="/contact">Kontakt</Link>
+                  <NavLink to="/contact">Kontakt</NavLink>
                 </li>
               </ul>
             </nav>
@@ -31,6 +32,7 @@ export default class App extends Component {
               <Route path="/" element={<Home />} />
               <Route path="/news" element={<News />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="*" element={<ErrorPage />} />
             </Routes>
           </section>
         </div>
